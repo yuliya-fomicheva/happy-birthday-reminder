@@ -1,4 +1,4 @@
-<html>
+<html class="page">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<title>Хеппи-Бёздер </title>
@@ -9,42 +9,65 @@
 		<link rel="icon" href="./svg/party-popper.svg" />
 	
 </head>
-<body>
-	<header>
-		<div class="page-cover"></div>
-		<div class="container">
-			<div class="header-title">
-				<h1 class="page-title">Хеппи-Бёздер </h1>
-				<img class="header-page-icon" src="./svg/party-popper.svg" alt="Иконка Хлопушки" width="70">
+<!-- <body> -->
+<body class="page__body">
+	<!-- <header> -->
+	<header class="header page__header">
+		<!-- <div class="page-cover"></div> -->
+		<div class="header__cover"></div>
+		<!-- <div class="container"> -->
+			<div class="header-wrapper container"> <!-- ????-->
+				<h1 class="header__title">Хеппи-Бёздер </h1>
+				<img class="header__icon" src="./svg/party-popper.svg" alt="Иконка Хлопушки" width="70">
 			</div>
 			
-		</div>
+		<!-- </div> -->
 	</header>
 
-	<main class="container">
-		<h2 class="birthday-title">Дни рождения</h2>
-		<ul class="birthday-list"></ul>
-		<template id="birthday-list-template">
+	<!-- <main class="container">  -->
+		<!--Вместо main сделать секцию-->
+		<main class="page__main">
+		<div class="main__wrapper container">
+		<!-- <h2 class="birthday-title">Дни рождения</h2> -->
+		<h2 class="main__title">Дни рождения</h2>
+		<!-- <ul class="birthday-list"></ul> -->
+		<ul class="main__list"></ul>
+		<!-- <template id="birthday-list-template">
 			<li class="item-birthday-list">
 				<span class="birthman-name">Этот код</span> <span>: </span>
 				<time class="birthday-date" datetime="2024-08-15">15 августа</time>
 			</li>
+		</template> -->
+		<template id="main__list-template">
+			<li class="maim__item">
+				<span class="main__item-name">Этот код</span> <span>: </span>
+				<time class="main__item-date" datetime="2024-08-15">15 августа</time>
+			</li>
 		</template>
-
-		<button class="button"> Напомнить </button>
+		
+		<!-- <button class="button"> Напомнить </button> -->
+		<button class="main__button-remind button"> Напомнить </button>
+		</div>
 	</main>
 
 	<section  class="modal modal-remind">
-		<h1>Скоро день рождения!</h1>
+		<!-- <h1>Скоро день рождения!</h1> -->
+		<h1 class="modal-remind__title">Скоро день рождения!</h1>
 
-		<h2 class="date-next-bith-title">Через 56 дней, 16 мая </h2>
+		<!-- <h2 class="date-next-bith-title">Через 56 дней, 16 мая </h2> -->
+		<h2 class="modal-remind__next-birtday-info">Через 56 дней, 16 мая </h2>
 
-		<ul class="next-birthday-list"></ul>	
-		<template id="next-birthday-template">
+		<!-- <ul class="next-birthday-list"></ul>	 -->
+		<ul class="modal-remind__next-birthday-list"></ul>
+		<!-- <template id="next-birthday-template">
 			<li class="item-next-birthday-list" >Мама – 56 лет 	</li>
+		</template> -->
+		<template id="modal-remind__next-birthday-template">
+			<li class="modal-remind__item" >Мама – 56 лет 	</li>
 		</template>
 	
-		<button class="button"> Ок </button>
+		<!-- <button class="button"> Ок </button> -->
+		<button class="modal-remind__close button"> Ок </button>
 	
 	</section>
 
