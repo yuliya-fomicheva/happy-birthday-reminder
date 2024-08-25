@@ -140,18 +140,6 @@ img {
     display: none;
 }
 
-@keyframes bounce {
-    0% { transform: translateY(-2000px); }
-    70% { transform: translateY(30px); }
-    90% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-}
-
-.modal_show {
-    display: block;
-    animation-name: bounce;
-    animation-duration: 0.6s;
-}
 
 
 .modal-remind__title {
@@ -185,5 +173,74 @@ img {
     margin: 0 auto;
 }
 
+.modal-add {
+    width: 400px;
+    padding: 25px 50px;
+    top: 85px;
+    margin-left: -300px;
+    left: 50%;
+    display: none;
+}
+
+.modal-add__title {
+    text-align: center;
+    font-weight: 700;
+	font-size: 24px;
+	letter-spacing: 0.3rem;
+
+    margin-bottom: 20px;
+}
+
+.modal-add__form {
+    /* text-align: center; */
+    margin: 15px 50px;
+}
+
+.modal-add__label {
+    font-size: 16px;
+    font-weight: 600;
+
+	letter-spacing: 0.3rem;
+    display: block;
+}
+
+ .modal-add__input {
+    box-sizing: border-box;
+    width: 300px;
+    padding: 10px 15px;
+    padding-right: 40px;
+    font:inherit;
+    color: #000;
+    /* text-transform: uppercase; */
+
+    background-color: #fff;
+    border: 2px solid #f9bf51;
+    margin-bottom: 20px;
+   
+}
+
+.modal-add__input:focus,
+.modal-add__input:hover
+.modal-add__input:active {
+    border-color: #37352f;    
+}
+
+.modal-add__close {
+    margin-left: 50px;
+}
+
+
+@keyframes bounce {
+    0% { transform: translateY(-2000px); }
+    70% { transform: translateY(30px); }
+    90% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.modal_show {
+    display: block;
+    animation-name: bounce;
+    animation-duration: 0.6s;
+}
 
 

@@ -9,4 +9,10 @@ let formatDate = (dateString) => {
     return `${day} ${months[month - 1]}`;
 };
 
-export {formatDate};
+let today = new Date();
+
+let getTodayformatDate = (day = today) => {
+    return (`${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`)};
+
+
+export {formatDate, getTodayformatDate };

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html class="page">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -21,16 +22,8 @@
 	<main class="page__main">
 		<section class="birthday">
 			<div class="birthday__wrapper container">
-				<!-- <h2 class="birthday-title">Дни рождения</h2> -->
 				<h2 class="birthday__title">Дни рождения</h2>
-				<!-- <ul class="birthday-list"></ul> -->
 				<ul class="birthday__list"></ul>
-				<!-- <template id="birthday-list-template">
-					<li class="item-birthday-list">
-						<span class="birthman-name">Этот код</span> <span>: </span>
-						<time class="birthday-date" datetime="2024-08-15">15 августа</time>
-					</li>
-				</template> -->
 				<template id="birthday__list-template">
 					<li class="birthday__item">
 						<span class="birthday__name">Этот код</span> <span>: </span>
@@ -38,30 +31,42 @@
 					</li>
 				</template>
 				
-				<!-- <button class="button"> Напомнить </button> -->
 				<button class="birthday__button-remind button"> Напомнить </button>
+				<button class="birthday__button-add button"> Добаваить </button>
 				</div>
 		</section>
 	</main>
 
 	<section  class="modal modal-remind">
-		<!-- <h1>Скоро день рождения!</h1> -->
 		<h1 class="modal-remind__title">Скоро день рождения!</h1>
-
-		<!-- <h2 class="date-next-bith-title">Через 56 дней, 16 мая </h2> -->
 		<h2 class="modal-remind__next-birtday-info">Через 56 дней, 16 мая </h2>
 
-		<!-- <ul class="next-birthday-list"></ul>	 -->
 		<ul class="modal-remind__next-birthday-list"></ul>
-		<!-- <template id="next-birthday-template">
-			<li class="item-next-birthday-list" >Мама – 56 лет 	</li>
-		</template> -->
 		<template id="modal-remind__next-birthday-template">
 			<li class="modal-remind__item" >Мама – 56 лет 	</li>
 		</template>
 	
-		<!-- <button class="button"> Ок </button> -->
 		<button class="modal-remind__close button"> Ок </button>
+	
+	</section>
+
+	<section  class="modal modal-add">
+		<h1 class="modal-add__title">Добавить день рождение!</h1>
+            <form class="form modal-add__form" method="post" action="#">
+                <p>
+                    <label class="modal-add__label" for="user-name">Имя</label>
+                    <input  class="modal-add__input modal-add__input_name" id="user-name" type="text" name="name" 
+                    placeholder="Ирина Горбачева" required>
+                </p>
+                <p>
+                    <label class="modal-add__label" for="user-birthday">Дата рождения</label>
+                    <input class="modal-add__input modal-add__input_birthday" id="user-birthday" type="date" name="birthday" max="" required>
+					<button type="submit" class="modal-add__close button"> Ок </button>
+					<button class="modal-add__cancel button"> Отмена </button>
+                </p>
+            </form>
+		
+	
 	
 	</section>
 
