@@ -6,44 +6,48 @@ import { formatDate } from "./module/date.js";
 
 const birthdayData = [ 
 	{ 
-        name: 'Валерий Глебович' , 
-        dateBirth: '1999-08-06' 
+        name: 'Джонни Депп' , 
+        dateBirth: '1963-06-09' 
     },
     {
-         name: 'Мариша' ,
+         name: 'Крис Эванс' ,
          dateBirth: '2002-06-13',
 
 	},
     { 
-        name: 'Мама' , 
-        dateBirth: '1977-01-17' 
+        name: 'Джон Траволта' , 
+        dateBirth: '1954-02-18' 
     }, 
     { 
-        name: 'Папа' , 
-        dateBirth: '1977-01-17' 
+        name: 'Игорь Николаев' , 
+        dateBirth: '1960-01-17' 
+    }, 
+    { 
+        name: 'Джим Керри' , 
+        dateBirth: '1962-01-17' 
     }, 
     {
-        name: 'Димок',
-        dateBirth: '1998-06-13'
+        name: 'Натали Портман',
+        dateBirth: '1981-06-19'
     }]  ;
 
 
-const birthdayList = document.querySelector('.birthday-list');
-const birthdayListTemplate = document.querySelector('#birthday-list-template');
-const remindNextBirthButton = document.querySelector('.button');
+const birthdayList = document.querySelector('.birthday__list');
+const birthdayListTemplate = document.querySelector('#birthday__list-template');
+const remindNextBirthButton = document.querySelector('.birthday__button-remind');
 
 const popupBirtdayRemind = document.querySelector(".modal-remind");
-const nextBirthList = popupBirtdayRemind.querySelector(".next-birthday-list");
-const nextBtirthdayTemplate =  popupBirtdayRemind.querySelector("#next-birthday-template");
-const dateNextBithTitle = popupBirtdayRemind.querySelector(".date-next-bith-title");
-const closeBirtdayRemind = popupBirtdayRemind.querySelector(".button");
+const nextBirthList = popupBirtdayRemind.querySelector(".modal-remind__next-birthday-list");
+const nextBtirthdayTemplate =  popupBirtdayRemind.querySelector("#modal-remind__next-birthday-template");
+const dateNextBithTitle = popupBirtdayRemind.querySelector(".modal-remind__next-birtday-info");
+const closeBirtdayRemind = popupBirtdayRemind.querySelector(".modal-remind__close");
 
 
 
 let renderBithMan = (birthdayList) => {
     const itemBirthdayList = birthdayListTemplate.content.cloneNode(true);
-    itemBirthdayList.querySelector('.birthday-date').textContent =  formatDate(birthdayList.dateBirth);
-    itemBirthdayList.querySelector('.birthman-name').textContent = birthdayList.name;
+    itemBirthdayList.querySelector('.birthday__date').textContent =  formatDate(birthdayList.dateBirth);
+    itemBirthdayList.querySelector('.birthday__name').textContent = birthdayList.name;
     return itemBirthdayList;
 }
 
@@ -60,7 +64,7 @@ function createReminderTitleAndList () {
 
     for (const birtdayManList of birtdayManListAndTitle.bDayManList) {
 		let itemBirthdayList = nextBtirthdayTemplate.content.cloneNode(true);
-		itemBirthdayList.querySelector('.item-next-birthday-list').textContent = birtdayManList;
+		itemBirthdayList.querySelector('.modal-remind__item').textContent = birtdayManList;
 		nextBirthList.appendChild(itemBirthdayList);
 	}
 };
@@ -68,7 +72,7 @@ function createReminderTitleAndList () {
 remindNextBirthButton.addEventListener('click', function  (evt) {
     evt.preventDefault();
     createReminderTitleAndList ();
-    popupBirtdayRemind.classList.add("modal-show");
+    popupBirtdayRemind.classList.add("modal_show");
     
 
 }) 
@@ -76,8 +80,8 @@ remindNextBirthButton.addEventListener('click', function  (evt) {
 
 closeBirtdayRemind.addEventListener("click", function (evt) {
     evt.preventDefault();
-    popupBirtdayRemind.classList.remove("modal-show");
-	let itemNextBirthList = nextBirthList.querySelectorAll('.item-next-birthday-list');
+    popupBirtdayRemind.classList.remove("modal_show");
+	let itemNextBirthList = nextBirthList.querySelectorAll('.modal-remind__item');
 	itemNextBirthList.forEach(li => {li.remove();});
 	
 });

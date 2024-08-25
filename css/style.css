@@ -5,7 +5,7 @@
     color: #37352f;
 }
 
-ul > li {
+ul {
 	list-style: none;
 }
 
@@ -13,7 +13,7 @@ img {
 	max-width: 100%;
 }
 
-.page-cover {
+.header__cover{
     background-color: #f9bf52;
     width: 100%;
     min-height: 120px;
@@ -57,12 +57,12 @@ img {
 	color: white;
 }
 
-.header-title{
+.header__wrapper {
     position: relative;
 	margin-bottom: 50px;
 }
 
-.header-title h1 {
+.header__title {
 	padding-top: 30px;
 
 	font-weight: 700;
@@ -72,7 +72,7 @@ img {
 
 }
 
-.header-page-icon {
+.header__icon {
     position: absolute;
     top: -40px;
     left: -40px;
@@ -80,17 +80,17 @@ img {
 
 }
 
-.birthday-title {
+.birthday__title {
 	font-weight: 500;
 	font-size: 28px;
 	margin-bottom: 30px;
 	
 }
 
-.birthday-list {
+.birthday__list {
 	margin-bottom: 30px;
 }
-.item-birthday-list {
+.birthday__item {
 	--list-style-color: #f9bf51; 
 	display: block;
 	margin-bottom: 10px;
@@ -103,12 +103,12 @@ img {
 	position: relative;
 }
 
-.item-birthday-list:hover {
+.birthday__item:hover {
 	opacity: 0.8;
 	color: black;
 }
 
-.item-birthday-list .birthman-name::before {
+.birthday__name::before {
 	content: '';
 	background-color: var(--list-style-color);
 	width: 17px;
@@ -146,24 +146,23 @@ img {
     90% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
 }
-.modal-show {
+
+.modal_show {
     display: block;
     animation-name: bounce;
     animation-duration: 0.6s;
 }
 
 
-.modal-remind h1 {
-
+.modal-remind__title {
 	font-weight: 700;
-	font-size: 28px;
+	font-size: 24px;
 	letter-spacing: 0.3rem;
 
     margin-bottom: 20px;
-
 }
 
-.date-next-bith-title {
+.modal-remind__next-birtday-info {
     font-size: 22px;
     color: #37352f;
     font-weight: 400;
@@ -172,7 +171,7 @@ img {
 
 }
 
-.item-next-birthday-list {
+.modal-remind__next-birthday-list {
 	margin-bottom: 10px;
 	padding: 0;
 	padding-left: 10px;
@@ -181,7 +180,7 @@ img {
     font-weight: 400;
 }
 
-.modal-remind  > .button {
+.modal-remind__close {
     display: block;
     margin: 0 auto;
 }

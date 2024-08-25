@@ -9,45 +9,39 @@
 		<link rel="icon" href="./svg/party-popper.svg" />
 	
 </head>
-<!-- <body> -->
 <body class="page__body">
-	<!-- <header> -->
 	<header class="header page__header">
-		<!-- <div class="page-cover"></div> -->
 		<div class="header__cover"></div>
-		<!-- <div class="container"> -->
-			<div class="header-wrapper container"> <!-- ????-->
+			<div class="header__wrapper container">
 				<h1 class="header__title">Хеппи-Бёздер </h1>
 				<img class="header__icon" src="./svg/party-popper.svg" alt="Иконка Хлопушки" width="70">
 			</div>
-			
-		<!-- </div> -->
 	</header>
 
-	<!-- <main class="container">  -->
-		<!--Вместо main сделать секцию-->
-		<main class="page__main">
-		<div class="main__wrapper container">
-		<!-- <h2 class="birthday-title">Дни рождения</h2> -->
-		<h2 class="main__title">Дни рождения</h2>
-		<!-- <ul class="birthday-list"></ul> -->
-		<ul class="main__list"></ul>
-		<!-- <template id="birthday-list-template">
-			<li class="item-birthday-list">
-				<span class="birthman-name">Этот код</span> <span>: </span>
-				<time class="birthday-date" datetime="2024-08-15">15 августа</time>
-			</li>
-		</template> -->
-		<template id="main__list-template">
-			<li class="maim__item">
-				<span class="main__item-name">Этот код</span> <span>: </span>
-				<time class="main__item-date" datetime="2024-08-15">15 августа</time>
-			</li>
-		</template>
-		
-		<!-- <button class="button"> Напомнить </button> -->
-		<button class="main__button-remind button"> Напомнить </button>
-		</div>
+	<main class="page__main">
+		<section class="birthday">
+			<div class="birthday__wrapper container">
+				<!-- <h2 class="birthday-title">Дни рождения</h2> -->
+				<h2 class="birthday__title">Дни рождения</h2>
+				<!-- <ul class="birthday-list"></ul> -->
+				<ul class="birthday__list"></ul>
+				<!-- <template id="birthday-list-template">
+					<li class="item-birthday-list">
+						<span class="birthman-name">Этот код</span> <span>: </span>
+						<time class="birthday-date" datetime="2024-08-15">15 августа</time>
+					</li>
+				</template> -->
+				<template id="birthday__list-template">
+					<li class="birthday__item">
+						<span class="birthday__name">Этот код</span> <span>: </span>
+						<time class="birthday__date" datetime="2024-08-15">15 августа</time>
+					</li>
+				</template>
+				
+				<!-- <button class="button"> Напомнить </button> -->
+				<button class="birthday__button-remind button"> Напомнить </button>
+				</div>
+		</section>
 	</main>
 
 	<section  class="modal modal-remind">
