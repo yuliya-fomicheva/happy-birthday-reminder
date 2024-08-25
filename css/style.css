@@ -43,6 +43,8 @@ img {
     background-color: #f9bf52;
     border: none;
     border-radius: 5px;
+
+    cursor: pointer;
 }
 
 
@@ -54,6 +56,11 @@ img {
 
 .button:active {
 	opacity: 1;
+	color: white;
+}
+
+.button:disabled {
+    opacity: 0.4;
 	color: white;
 }
 

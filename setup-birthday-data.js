@@ -88,6 +88,8 @@ remindNextBirthButton.addEventListener('click', function  (evt) {
     evt.preventDefault();
     createReminderTitleAndList ();
     popupBirtdayRemind.classList.add("modal_show");
+    addNextBirthButton.disabled = true;
+
     
 
 }) 
@@ -95,18 +97,21 @@ remindNextBirthButton.addEventListener('click', function  (evt) {
 closeBirtdayRemind.addEventListener ("click", function (evt) {
     evt.preventDefault();
     popupBirtdayRemind.classList.remove("modal_show");
-
+    addNextBirthButton.disabled = false;
+ 
 })
 
 addNextBirthButton.addEventListener('click', function  (evt) {
     evt.preventDefault();
     popupBirtdayAdd.classList.add("modal_show");
+    remindNextBirthButton.disabled = true;
     
 }) 
 
 cancelBirtdayAdd.addEventListener ("click", function (evt) {
     evt.preventDefault();
     popupBirtdayAdd.classList.remove("modal_show");
+    remindNextBirthButton.disabled = false;
 
 })
 
@@ -133,5 +138,7 @@ form.addEventListener('submit', (evt) => {
     showBirthdayList();
             
     popupBirtdayAdd.classList.remove("modal_show");
+    remindNextBirthButton.disabled = false;
+
 });
 
