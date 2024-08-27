@@ -4,7 +4,8 @@ import { formatDate } from "./date.js"
 const today = new Date(); 
 today.setHours(0,0);
 
-
+//сортировка массива начиная от сегодняшнего дня и месяца. 
+// Если в списке будет сегодняшяя дата, то она будет первой
 function sortFromToday(bDayData) {
     return bDayData.sort((bDayMan1, bDayMan2) =>  {
 		const dateA = new Date (bDayMan1.dateBirth).setFullYear(today.getFullYear());
@@ -25,7 +26,7 @@ function sortFromToday(bDayData) {
 		}
     });
   }
-
+// создание заголовка и список ближайших именинников
 function createBDayManListAndTitle (bDayData) {
 	const bDayDataCopy = sortFromToday(bDayData);
     const bDayManList = []; 
@@ -41,12 +42,6 @@ function createBDayManListAndTitle (bDayData) {
 		futureYearTitle: futureYearTitle};
 };
 
-// function createFutureYearTitle(bDayData) {
-// 	let bDayDataCopy = sortFromToday(bDayData).slice();
-//     return `${reportHowManyDays(bDayDataCopy[0].dateBirth)}, ${formatDate(bDayData[0].dateBirth)} `;
-// }
-
-
 function isThisYearBDay (bDayDate) {
     return (
             new Date(bDayDate).getMonth() > today.getMonth() || 
@@ -59,6 +54,7 @@ function isThisYearBDay (bDayDate) {
 function countFutureAge (bDayDate) {
 	return Math.round(today.getFullYear() - new Date(bDayDate).getFullYear() + Number(!isThisYearBDay(bDayDate)));
 }
+
 
 function countRemainderToRemind(num) {
 	if (num % 100 >= 11 && num % 100 <=14) return num % 100;
@@ -103,5 +99,11 @@ function reportHowManyDays (bDayDate) {
 			return `Через ${countRemainingDaysToBirthday  (bDayDate)} дней`;
 	}
 };
+
+// function createFutureYearTitle(bDayData) {
+// 	let bDayDataCopy = sortFromToday(bDayData).slice();
+//     return `${reportHowManyDays(bDayDataCopy[0].dateBirth)}, ${formatDate(bDayData[0].dateBirth)} `;
+// }
+
 
 export {createBDayManListAndTitle}

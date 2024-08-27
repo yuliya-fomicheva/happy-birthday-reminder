@@ -4,6 +4,8 @@ import { createBDayManListAndTitle} from "./module/next-birthday.js";
 
 import { formatDate, getTodayformatDate } from "./module/date.js";
 
+
+//пока статические данные
 const birthdayData = [ 
 	{ 
         name: 'Джонни Депп' , 
@@ -31,19 +33,20 @@ const birthdayData = [
         dateBirth: '1981-06-09'
     }]  ;
 
-
+//для отрисовка гланой страницы
 const birthdayList = document.querySelector('.birthday__list');
 const birthdayListTemplate = document.querySelector('#birthday__list-template');
 const remindNextBirthButton = document.querySelector('.birthday__button-remind');
 const addNextBirthButton = document.querySelector('.birthday__button-add');
 
-
+// попап напоминалка
 const popupBirtdayRemind = document.querySelector(".modal-remind");
 const nextBirthList = popupBirtdayRemind.querySelector(".modal-remind__next-birthday-list");
 const nextBtirthdayTemplate =  popupBirtdayRemind.querySelector("#modal-remind__next-birthday-template");
 const dateNextBithTitle = popupBirtdayRemind.querySelector(".modal-remind__next-birtday-info");
 const closeBirtdayRemind = popupBirtdayRemind.querySelector(".modal-remind__close");
 
+// попап с формой для записи нового именинника 
 const popupBirtdayAdd = document.querySelector(".modal-add");
 const cancelBirtdayAdd = popupBirtdayAdd.querySelector(".modal-add__cancel");
 const form = popupBirtdayAdd.querySelector(".modal-add__form");
@@ -51,7 +54,7 @@ const name = popupBirtdayAdd.querySelector("[name=name]");
 const birtday = popupBirtdayAdd.querySelector("[name=birthday]");
 
 
-
+// преобразование списка именинников в {Имя: день месяц}
 let renderBithMan = (birthdayList) => {
     const itemBirthdayList = birthdayListTemplate.content.cloneNode(true);
     itemBirthdayList.querySelector('.birthday__date').textContent =  formatDate(birthdayList.dateBirth);
@@ -65,6 +68,12 @@ function showBirthdayList() {
     };
 }
 
+showBirthdayList();
+
+//установка макс-значения для ввода даты
+birtday.setAttribute('max', getTodayformatDate());
+
+//создание Заголовка и списка ближайших именинников 
 function createReminderTitleAndList () {
 
 	const birtdayManListAndTitle = createBDayManListAndTitle(birthdayData);
@@ -77,13 +86,7 @@ function createReminderTitleAndList () {
 	}
 };
 
-
-birtday.setAttribute('max', getTodayformatDate());
-
-
-showBirthdayList();
-
-
+// показ попапа напоминалки
 remindNextBirthButton.addEventListener('click', function  (evt) {
     evt.preventDefault();
     createReminderTitleAndList ();
@@ -93,21 +96,22 @@ remindNextBirthButton.addEventListener('click', function  (evt) {
     
 
 }) 
-
+// закрытие попапа напоминалки
 closeBirtdayRemind.addEventListener ("click", function (evt) {
     evt.preventDefault();
     popupBirtdayRemind.classList.remove("modal_show");
     addNextBirthButton.disabled = false;
  
 })
-
+// показ попапа с формой для добавления нового именинника 
 addNextBirthButton.addEventListener('click', function  (evt) {
     evt.preventDefault();
     popupBirtdayAdd.classList.add("modal_show");
+    name.focus();
     remindNextBirthButton.disabled = true;
     
 }) 
-
+// закрыть попапа с формой для добавления нового именинника без изменений
 cancelBirtdayAdd.addEventListener ("click", function (evt) {
     evt.preventDefault();
     popupBirtdayAdd.classList.remove("modal_show");
@@ -116,13 +120,7 @@ cancelBirtdayAdd.addEventListener ("click", function (evt) {
 })
 
 
-addNextBirthButton.addEventListener("click", function (evt) {
-    evt.preventDefault();
-    popupBirtdayAdd.classList.add("modal-show");
-    name.focus();
-});
-
-
+// проверка валидности формы и добавление нового значения в массив
 form.addEventListener('submit', (evt) => {
     evt.preventDefault();
 
