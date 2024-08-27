@@ -15,4 +15,8 @@
 <img src = 'screens/popup-add.png' >
 
 ### Дата не может быть больше сегодняшней
+<<<<<<< HEAD
 <img src = 'screens/validate-date.png' >
+=======
+<img src = 'screens/validate-date.png' >
+>>>>>>> e2261bc0af6246aff1896633b07ba4944080c513
