@@ -1,8 +1,9 @@
 
-import { formatDate } from "./date.js"
+import { formatDate, getTodayformatDate } from "./date.js"
 
 const today = new Date(); 
 today.setHours(0,0);
+
 
 //сортировка массива начиная от сегодняшнего дня и месяца. 
 // Если в списке будет сегодняшяя дата, то она будет первой
@@ -28,9 +29,10 @@ function sortFromToday(bDayData) {
   }
 // создание заголовка и список ближайших именинников
 function createBDayManListAndTitle (bDayData) {
+
 	const bDayDataCopy = sortFromToday(bDayData);
     const bDayManList = []; 
-	const futureYearTitle = `${reportHowManyDays(bDayDataCopy[0].dateBirth)}, ${formatDate(bDayData[0].dateBirth)} `;
+	const futureYearTitle = `${reportHowManyDays(bDayDataCopy[0].dateBirth)}, ${formatDate(bDayDataCopy[0].dateBirth)} `;
 	for (let i = 0; i < bDayDataCopy.length; i++) {
 		if (countRemainingDaysToBirthday(bDayDataCopy[0].dateBirth) !== 
 		countRemainingDaysToBirthday(bDayDataCopy[i].dateBirth)) break;

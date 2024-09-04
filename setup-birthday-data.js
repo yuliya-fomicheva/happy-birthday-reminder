@@ -6,7 +6,10 @@ import { formatDate, getTodayformatDate } from "./module/date.js";
 
 
 //пока статические данные
-const birthdayData = [ 
+const birthdayData = [  {
+        name: 'Натали Портман',
+        dateBirth: '1981-06-09'
+    },
 	{ 
         name: 'Джонни Депп' , 
         dateBirth: '1963-06-09' 
@@ -24,14 +27,13 @@ const birthdayData = [
         name: 'Игорь Николаев' , 
         dateBirth: '1960-01-17' 
     }, 
+   
     { 
         name: 'Джим Керри' , 
         dateBirth: '1962-01-17' 
     }, 
-    {
-        name: 'Натали Портман',
-        dateBirth: '1981-06-09'
-    }]  ;
+    
+    ]  ;
 
 //для отрисовка гланой страницы
 const birthdayList = document.querySelector('.birthday__list');
@@ -71,7 +73,7 @@ function showBirthdayList() {
 showBirthdayList();
 
 //установка макс-значения для ввода даты
-birtday.setAttribute('max', getTodayformatDate());
+// birtday.setAttribute('max', getTodayformatDate());
 
 //создание Заголовка и списка ближайших именинников 
 function createReminderTitleAndList () {
@@ -92,6 +94,7 @@ remindNextBirthButton.addEventListener('click', function  (evt) {
     createReminderTitleAndList ();
     popupBirtdayRemind.classList.add("modal_show");
     addNextBirthButton.disabled = true;
+   
 
     
 
@@ -101,6 +104,8 @@ closeBirtdayRemind.addEventListener ("click", function (evt) {
     evt.preventDefault();
     popupBirtdayRemind.classList.remove("modal_show");
     addNextBirthButton.disabled = false;
+    let itemNextBirthList = nextBirthList.querySelectorAll('.modal-remind__item');
+    itemNextBirthList.forEach(li => {li.remove();});
  
 })
 // показ попапа с формой для добавления нового именинника 
